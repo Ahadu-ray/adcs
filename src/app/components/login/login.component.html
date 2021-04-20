@@ -1,0 +1,86 @@
+<div class="login-box mx-auto my-3">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <h1><b>ADCS Admin</b></h1>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Login to Adminstrator</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()" method="post">
+        <div class="form-group">
+          <div class="input-group ">
+            <input type="username" class="form-control" id="username" formControlName="username" placeholder="username">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="f.username.touched && f.username.invalid" class="alert alert-danger">
+            <div *ngIf="f.username.errors.required">username is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+            <div *ngIf="f.password.errors.required">password is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 mx-auto">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">Log In</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<div  style="background-image: url('a.jpg'); width: 100%; height: 100%;">
+  <div class="login-box mx-auto card card-outline card-primary">
+    <div class="card-header text-center">
+      <h1 style="font-size: 4em;"><b>ADCS Admin</b></h1>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Login to Adminstrator</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()" method="post" class="needs-validation">
+        <div class="input-group mb-3">
+          <input type="username" class="form-control" id="username" formControlName="username" placeholder="username" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 mx-auto">
+          <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <div class="mx-auto" style="background-color: cornflowerblue; width: 100%;">
+
+  </div>
+</div> -->

@@ -1,0 +1,78 @@
+<div class="content-header">
+  <div class="row d-flex justify-content-between ">
+    <div class="col-4">
+      <h1 class="m-0">Orders</h1>
+    </div>
+  </div>
+</div>
+<!-- <div class="col-sm-6">
+    <span class="irs irs--flat js-irs-3"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: visible;">-50°</span><span class="irs-max" style="visibility: visible;">50°</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 47.0225%;">0°</span></span><span class="irs-grid"></span><span class="irs-bar irs-bar--single" style="left: 0px; width: 50%;"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-handle single" style="left: 47.5647%;"><i></i><i></i><i></i></span></span><input id="range_6" type="text" name="range_6" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+  </div> -->
+
+<div class="-md-9">
+  <div class="card card-primary card-outline">
+
+    <div class="card-header">
+      <h3 class="card-title">All Orders</h3>
+      <div class="card-tools">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" placeholder="Search Item">
+          <div class="input-group-append">
+            <div class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body row p-0">
+      <div class="mx-auto my-2" style="width: fit-content;">
+        <select class="form-control" [(ngModel)]="status" (change)="changer()">
+          <option value="all">All</option>
+          <option value="waiting">Waiting</option>
+          <option value="processing">Processing</option>
+          <option value="ready">Ready</option>
+        </select>
+      </div>
+
+      <div class="mx-auto my-2" style="width: fit-content;">
+
+        <!-- <h1 [textContent]="time" >
+          </h1>
+          <button (click)="do()">Change</button> -->
+      </div>
+
+      <div class="table-responsive mailbox-messages">
+        <table class="table table-hover table-striped">
+
+          <thead>
+            <tr role="row">
+              <th class="sorting" tabindex="0">Customer</th>
+              <th class="sorting" tabindex="0">Items</th>
+              <th class="" tabindex="0">Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let order of ordersMain">
+              <td class="mailbox-subject"><b>{{order.customer.username}}</b></td>
+              <td class="mailbox-title"><b>{{order.hav}}</b>
+              </td>
+              <td>
+                <select class=" form-control" style="width: fit-content;" [(ngModel)]="order.status"
+                  (change)="selector($event,order._id)">
+                  <option value="waiting">Waiting</option>
+                  <option value="processing">Processing</option>
+                  <option value="ready">Ready</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</div>

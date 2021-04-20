@@ -1,0 +1,53 @@
+<div class="card-header">
+  <h4 class="modal-title">Edit Item</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    Cancel
+  </button>
+</div>
+<div class="modal-body">
+
+  <form [formGroup]="editItemForm" (ngSubmit)="editItem()" method="POST">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="name" class="form-control" formControlName="name" [(ngModel)]="saveItem.name">
+      <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+        <div *ngIf="f.name.errors.required">Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input class="form-control" formControlName="description" [(ngModel)]="saveItem.description">
+      <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+        <div *ngIf="f.description.errors.required">Description is required.</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label>Tag</label>
+      <input class="form-control" formControlName="tags" [(ngModel)]="saveItem.tags">
+      <div *ngIf="f.tags.touched && f.tags.invalid" class="alert alert-danger">
+        <div *ngIf="f.tags.errors.required">Tags is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="number" class="form-control" formControlName="price" [(ngModel)]="saveItem.price">
+      <div *ngIf="f.price.touched && f.price.invalid" class="alert alert-danger">
+        <div *ngIf="f.price.errors.required">Price is required.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input type="file" class="form-control" (change)="setimg($event)" accept="image/png">
+    </div>
+
+    <div class="modal-footer form-group">
+      <button type="button" class="btn btn-outline-dark" data-dismiss="modal" (click)="activeModal.close('Close click')"
+        type="submit" [disabled]="!editItemForm.valid">Edit</button>
+    </div>
+  </form>
+
+</div>

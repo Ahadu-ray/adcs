@@ -1,0 +1,19 @@
+
+  <div class="card-header">
+    <h4 class="modal-title">Deposit</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="DepositForm" (ngSubmit)="Deposit()" method="POST">
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" class="form-control" formControlName="deposit" placeholder="Enter Ammount">
+      </div>
+
+      <div class="modal-footer form-group">
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="activeModal.close('Close click')">Submit</button>
+        
+      </div>
+    </form>
+  </div>

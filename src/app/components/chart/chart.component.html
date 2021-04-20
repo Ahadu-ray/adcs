@@ -1,0 +1,65 @@
+<div class="content-header py-4">
+  <div class="row">
+
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box mb-3">
+        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Customers</span>
+          <span class="info-box-number">42</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box mb-3">
+        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Orders(Last Month)</span>
+          <span class="info-box-number">300</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box mb-3">
+        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Items</span>
+          <span class="info-box-number">15 </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+  </div>
+</div>
+
+<div class="my-5">
+  <h1><b>
+      Number of orders in the last weeks
+    </b></h1>
+</div>
+<div class="my-5">
+  <canvas #myChart id='myChart'>{{ chart }}</canvas>
+</div>
+<div class="my-5">
+  <h1><b>
+      Number of Foods vs Their Ammount of Orders
+    </b></h1>
+</div>
+<div class="my-5">
+  <canvas #myChart id='myChart2'>{{ chart }}</canvas>
+</div>

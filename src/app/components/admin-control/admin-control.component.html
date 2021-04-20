@@ -1,0 +1,35 @@
+<div class="content-header py-4">
+    <div class="row d-flex justify-content-between ">
+        <div class="col-4">
+            <h1 class="m-0">Admin Control</h1>
+        </div>
+
+        <div class="col-2 " style="width: 400px; height: 400; ">
+            <button type="button" class="btn btn-primary btn-block" (click)="open()">
+                <i class="fas fa-plus"></i>
+                SignUp New Admin</button>
+                <button type="button" class="btn btn-warning btn-block" (click)="resetPassword()">
+                    <i class="fas fa-sync-alt"></i>
+                    Reset Password</button>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let admin of admins">
+            <div class="card card-outline card-primary">
+                <div class="card-header text-center">
+                    <b>
+                        {{admin.username}}
+                    </b>
+                    <div class="mx-auto card my-2" style="width:fit-content;">
+                        <button type="button" class="btn btn-outline-danger btn-block" style="width: fit-content;"
+                            (click)="Delete(admin._id)">
+                            <i class="fas fa-money-check-trash"></i>
+                            Delete</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
